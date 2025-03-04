@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Laboratorul №3 | Ex 1
+    </title>
+</head>
+<body>
+    <form>
+        
+        <button onclick = "Acum()">Acum</button><br>
+        <button onclick = "Ieri()">Ieri</button><br>
+        <button onclick = "Acum10Ani()">Acum 10 ani</button><br>
+        <button onclick = "PesteSaptamana()">Peste o saptamana</button><br>
+
+    </form>
+    <script> 
+
+        function Acum() 
+            {  let d = new Date();
+                let hour , min , sec , date , month , m , year; 
+                date = d.getDate();
+                month = d.getMonth();
+                switch (month) 
+                {
+                    case 1: month = "Ianuarie"; break;
+                    case 2: month = "Februarie"; break;
+                    case 3: month = "Martie"; break;
+                    case 4: month = "Aprilie"; break;
+                    case 5: month = "Mai"; break;
+                    case 6: month = "Iunie"; break;
+                    case 7: month = "Iulie"; break;
+                    case 8: month = "August"; break;
+                    case 9: month = "Septembrie"; break;
+                    case 10: month = "Octombrie"; break;
+                    case 11: month = "Noiembrie"; break;
+                    case 12: month = "Decembrie"; break;
+                }
+                year = d.getFullYear();
+                hour = d.getHours();
+                min = d.getMinutes();
+                sec = d.getSeconds();
+                alert("Azi e data de : " + date + "." + month + "." + year + "\nOra : " + hour + ":" + min + ":" + sec); 
+            }
+            function Ieri() {
+                let d = new Date(); 
+                let dIeri = new Date();
+                dIeri.setDate(d.getDate() - 1);
+                
+                let dateIeri = dIeri.getDate();
+                let monthIeri = dIeri.getMonth();
+                let yearIeri = dIeri.getFullYear();
+                let hour = dIeri.getHours();
+                let min = dIeri.getMinutes();
+                let sec = dIeri.getSeconds();
+                
+                switch (monthIeri) {
+                    case 0: monthIeri = "Ianuarie"; break;
+                    case 1: monthIeri = "Februarie"; break;
+                    case 2: monthIeri = "Martie"; break;
+                    case 3: monthIeri = "Aprilie"; break;
+                    case 4: monthIeri = "Mai"; break;
+                    case 5: monthIeri = "Iunie"; break;
+                    case 6: monthIeri = "Iulie"; break;
+                    case 7: monthIeri = "August"; break;
+                    case 8: monthIeri = "Septembrie"; break;
+                    case 9: monthIeri = "Octombrie"; break;
+                    case 10: monthIeri = "Noiembrie"; break;
+                    case 11: monthIeri = "Decembrie"; break;
+                }
+
+                alert("Ieri a fost data de : " + dateIeri + "." + monthIeri + "." + yearIeri + "\nOra : " + hour + ":" + min + ":" + sec);
+            }
+
+            function Acum10Ani() 
+            {
+                let d = new Date(); 
+                let d10Ani = new Date();
+                d10Ani.setFullYear(d.getFullYear() - 10);
+                
+                let date10Ani = d10Ani.getDate();
+                let month10Ani = d10Ani.getMonth();
+                let year10Ani = d10Ani.getFullYear();
+                let hour = d10Ani.getHours();
+                let min = d10Ani.getMinutes();
+                let sec = d10Ani.getSeconds();
+                
+                switch (month10Ani) {
+                    case 0: month10Ani = "Ianuarie"; break;
+                    case 1: month10Ani = "Februarie"; break;
+                    case 2: month10Ani = "Martie"; break;
+                    case 3: month10Ani = "Aprilie"; break;
+                    case 4: month10Ani = "Mai"; break;
+                    case 5: month10Ani = "Iunie"; break;
+                    case 6: month10Ani = "Iulie"; break;
+                    case 7: month10Ani = "August"; break;
+                    case 8: month10Ani = "Septembrie"; break;
+                    case 9: month10Ani = "Octombrie"; break;
+                    case 10: month10Ani = "Noiembrie"; break;
+                    case 11: month10Ani = "Decembrie"; break;
+                }
+
+                alert("Acum 10 ani era data de : " + date10Ani + "." + month10Ani + "." + year10Ani + "\nOra : " + hour + ":" + min + ":" + sec);
+
+            }
+            function PesteSaptamana() 
+            {
+                let d = new Date(); 
+                let dPesteSaptamana = new Date();
+                dPesteSaptamana.setDate(d.getDate() + 7);
+                
+                let datePesteSaptamana = dPesteSaptamana.getDate();
+                let monthPesteSaptamana = dPesteSaptamana.getMonth();
+                let yearPesteSaptamana = dPesteSaptamana.getFullYear();
+                let hour = dPesteSaptamana.getHours();
+                let min = dPesteSaptamana.getMinutes();
+                let sec = dPesteSaptamana.getSeconds();
+                
+                switch (monthPesteSaptamana) {
+                    case 1: monthPesteSaptamana = "Ianuarie"; break;
+                    case 2: monthPesteSaptamana = "Februarie"; break;
+                    case 3: monthPesteSaptamana = "Martie"; break;
+                    case 4: monthPesteSaptamana = "Aprilie"; break;
+                    case 5: monthPesteSaptamana = "Mai"; break;
+                    case 6: monthPesteSaptamana = "Iunie"; break;
+                    case 7: monthPesteSaptamana = "Iulie"; break;
+                    case 8: monthPesteSaptamana = "August"; break;
+                    case 9: monthPesteSaptamana = "Septembrie"; break;
+                    case 10: monthPesteSaptamana = "Octombrie"; break;
+                    case 11: monthPesteSaptamana = "Noiembrie"; break;
+                    case 12: monthPesteSaptamana = "Decembrie"; break;
+            }
+            alert("Peste o saptamana va fi data de : " + datePesteSaptamana + "." + monthPesteSaptamana + "." + yearPesteSaptamana + "\nOra : " + hour + ":" + min + ":" + sec);
+        }
+   </script>
+</body>
+</html>

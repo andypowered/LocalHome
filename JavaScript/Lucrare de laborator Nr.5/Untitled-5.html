@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    var zi = parseInt(prompt("Ziua:"));
+    var luna = parseInt(prompt("Luna:"));
+    var zodia = "";
+    
+    if( (luna==1 && zi>=20) || (luna==2 && zi<=18) ) zodia = "Varsator";
+    else if( (luna==2 && zi>=19) || (luna==3 && zi<=20) ) zodia = "Pesti";
+    else if( (luna==3 && zi>=21) || (luna==4 && zi<=19) ) zodia = "Berbec";
+    // ... continuati conditiile pentru toate zodiile
+    
+    document.write("Zodia: " + zodia);
+</script>
+</body>
+</html>

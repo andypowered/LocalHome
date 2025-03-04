@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    var n = prompt("Numar persoane:", 1);
+    var lista = "<ul>";
+    
+    for(var i=1; i<=n; i++){
+        var nume = prompt("Nume persoana " + i);
+        var prenume = prompt("Prenume persoana " + i);
+        var telefon = prompt("Telefon persoana " + i);
+        lista += "<li>" + nume + " " + prenume + ": " + telefon + "</li>";
+    }
+    
+    document.write(lista + "</ul>");
+</script>
+</body>
+</html>

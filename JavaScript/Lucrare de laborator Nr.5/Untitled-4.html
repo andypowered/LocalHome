@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    var n = prompt("Numar studenti:", 5);
+    var total = 0;
+    
+    for(var i=1; i<=n; i++){
+        var nume = prompt("Nume student " + i);
+        var nota1 = Number(prompt("Nota 1:"));
+        var nota2 = Number(prompt("Nota 2:"));
+        var media = (nota1 + nota2)/2;
+        total += media;
+        
+        document.write(
+            nume + " | " + nota1 + ", " + nota2 + 
+            " | Media: " + media.toFixed(2) + 
+            " | " + (media >=5 ? "Promovat" : "Nepromovat") + "<br>"
+        );
+    }
+    
+    document.write("Media grupei: " + (total/n).toFixed(2));
+</script>
+</body>
+</html>

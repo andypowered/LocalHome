@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    alert("Bine ati venit!");
+    var nume = prompt("Numele dvs:", "Ionescu");
+    document.write("Salut " + nume + "!<br>Culorile tale:");
+    
+    var culoare1 = prompt("Culoare 1:", "red");
+    var culoare2 = prompt("Culoare 2:", "blue");
+    var culoare3 = prompt("Culoare 3:", "green");
+    
+    document.write(
+        '<span style="color:' + culoare1 + '">' + culoare1 + '</span> ' +
+        '<span style="color:' + culoare2 + '">' + culoare2 + '</span> ' +
+        '<span style="color:' + culoare3 + '">' + culoare3 + '</span>'
+    );
+</script>
+</body>
+</html>

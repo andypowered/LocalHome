@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    var nume = prompt("Nume:", "Scutelnic");
+    var produs1 = prompt("Produs 1:", "Cafea");
+    var pret1 = prompt("Pret 1:", 20);
+    var cant1 = prompt("Cantitate 1:", 5);
+    var valoare1 = pret1 * cant1;
+
+    var produs2 = prompt("Produs 2:", "Zahar");
+    var pret2 = prompt("Pret 2:", 3);
+    var cant2 = prompt("Cantitate 2:", 2);
+    var valoare2 = pret2 * cant2;
+
+    document.write(
+        "<h3>" + nume + "</h3>" +
+        "<p>" + produs1 + ": " + pret1 + " x " + cant1 + " = " + valoare1 + "</p>" +
+        "<p>" + produs2 + ": " + pret2 + " x " + cant2 + " = " + valoare2 + "</p>" +
+        "<b>Total: " + (valoare1 + valoare2) + "</b>"
+    );
+</script>
+</body>
+</html>

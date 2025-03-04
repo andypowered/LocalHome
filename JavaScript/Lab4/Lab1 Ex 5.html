@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lab1 | Ex 5</title>
+</head>
+<body>
+    
+<h1>Contul 1</h1><br>
+<p>Soldul contului : </p> 
+<input type="number" name="Sold" id="Sold1">
+<button onclick="submitCont1()" type="button">Submit</button>
+
+<p>Soldul contului dupa creditare :</p> 
+<input type="number" name="SoldCredit" id="SoldCredit1" disabled>
+
+<p>Soldul contului dupa debitare :</p> 
+<input type="number" name="SoldDebit" id="SoldDebit1" disabled>
+
+<h1>Contul 2</h1><br>
+<p>Soldul contului : </p> 
+<input type="number" name="Sold2" id="Sold2">
+<button type="button" onclick="submitCont2()">Submit</button>
+
+<p>Soldul contului dupa creditare :</p> 
+<input type="number" name="SoldCredit2" id="SoldCredit2" disabled>
+
+<p>Soldul contului dupa debitare :</p> 
+<input type="number" name="SoldDebit2" id="SoldDebit2" disabled>
+    
+<script>
+    class Cont {
+        constructor() {
+            this.sold = 0; 
+        }
+
+        setBalance(valoare) {
+            if (valoare >= 0) {
+                this.sold = valoare;
+            } else {
+                this.sold = 0;
+                alert("Soldul nu poate fi negativ!");
+            }
+        }
+
+        credit(suma) {
+            if (suma > 0) {
+                this.sold += suma;
+            } else {
+                alert("Suma de creditare nu poate fi negativă!");
+            }
+        }
+
+        debit(suma) {
+            if (suma > 0 && suma <= this.sold) {
+                this.sold -= suma;
+            } else if (suma > this.sold) {
+                alert("Suma de debitare depășește soldul disponibil!");
+            } else {
+                alert("Suma de debitare trebuie să fie pozitivă!");
+            }
+        }
+
+        getBalance() {
+            return this.sold;
+        }
+    }
+
+    const cont1 = new Cont(); 
+    const cont2 = new Cont();
+        
+    function submitCont1() {
+        const sold1 = parseFloat(document.getElementById("Sold1").value);
+        if (!isNaN(sold1)) {
+            cont1.setBalance(sold1);
+        }
+
+        const credit1 = parseFloat(prompt("Introduceți suma pentru creditare:"));
+        if (!isNaN(credit1)) {
+            cont1.credit(credit1);
+        }
+
+        const debit1 = parseFloat(prompt("Introduceți suma pentru debitare:"));
+        if (!isNaN(debit1)) {
+            cont1.debit(debit1);
+        }
+
+        document.getElementById("SoldCredit1").value = cont1.getBalance();
+        document.getElementById("SoldDebit1").value = cont1.getBalance();
+    }
+
+    function submitCont2() {
+        const sold2 = parseFloat(document.getElementById("Sold2").value);
+        if (!isNaN(sold2)) {
+            cont2.setBalance(sold2);
+        }
+
+        const credit2 = parseFloat(prompt("Introduceți suma pentru creditare:"));
+        if (!isNaN(credit2)) {
+            cont2.credit(credit2);
+        }
+
+        const debit2 = parseFloat(prompt("Introduceți suma pentru debitare:"));
+        if (!isNaN(debit2)) {
+            cont2.debit(debit2);
+        }
+
+        document.getElementById("SoldCredit2").value = cont2.getBalance();
+        document.getElementById("SoldDebit2").value = cont2.getBalance();
+    }
+</script>
+</body>
+</html>

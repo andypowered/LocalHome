@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Laboratorul №3 | Ex 4</title>
+</head>
+<body>
+    <form>
+        Enter some text : <br><textarea id="text" name="text"> </textarea><br>
+        <br>
+        Enter a character to search for : <input type="text" name="textsrc" id="textsrc">
+        <button type="button" onclick="SrcFunc()">Search</button>
+        <br>
+        Results : <textarea id="Results" name="Results"></textarea>
+    </form>
+    <script>
+        function SrcFunc() {
+            let text = document.getElementById("text").value;
+            let textsrc = document.getElementById("textsrc").value;
+            let results = [];
+
+            text = text.toLowerCase();
+
+            for (let i = 0; i < 26; i++) {
+                let letter = String.fromCharCode(97 + i); 
+                let count = text.split(letter).length - 1; 
+                results.push(letter + ": " + count + " occurrences");
+            }
+
+            document.getElementById("Results").value = results.join("\n");
+        }
+    </script>
+</body>
+</html>
